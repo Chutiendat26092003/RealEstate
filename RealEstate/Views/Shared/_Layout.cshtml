@@ -1,0 +1,442 @@
+﻿@using Microsoft.AspNetCore.Http
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Identity
+
+@{
+	//RealEstateContext context;
+	//var email = User.Identity.Name;
+	//Account acc = context.Account.Where(a => a.Email == email).AsNoTracking().FirstOrDefault();
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - RealEstate</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealEstate.styles.css" asp-append-version="true" />
+
+	
+	<script src="~/js/stats.min.js"></script>
+	<script async="" src="~/js/fp.v3.3.0.min.js"></script>
+
+	<meta name="description" content="Kênh thông tin số 1 về bất động sản tại Việt Nam">
+
+	<!-- ================= Meta ================== -->
+	<meta name="keywords" content="Delta Villas, DeltaWeb, DeltaVilla,Template bất động sản, Template nhà đất">
+	<link rel="canonical" href="https://delta-platinum.mysapo.net/">
+	<meta name="revisit-after" content="1 days">
+
+	<meta name="robots" content="noodp,index,follow">
+
+	<!-- Facebook Open Graph meta tags -->
+
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Delta Platinum - Template bất động sản">
+	<meta property="og:image" content="https://bizweb.dktcdn.net/100/336/794/themes/692935/assets/logo.png?1664094337757">
+	<meta property="og:image:secure_url"
+		  content="https://bizweb.dktcdn.net/100/336/794/themes/692935/assets/logo.png?1664094337757">
+
+	<meta property="og:description" content="Kênh thông tin số 1 về bất động sản tại Việt Nam">
+	<meta property="og:url" content="https://delta-platinum.mysapo.net/">
+	<meta property="og:site_name" content="Delta Platinum">
+	<!-- Plugin CSS -->
+	<link rel="preload"
+		  href="https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.0" as="font"
+		  type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2" as="font"
+		  type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2" as="font"
+		  type="font/woff2" crossorigin="anonymous">
+	<!-- Plugin CSS -->
+	<link rel="preload" as="style" type="text/css" href="~/css/plugin.scss.css" asp-append-version="true">
+	<link rel="preload" as="style" type="text/css" href="~/css/base.scss.css" asp-append-version="true">
+	<link rel="preload" as="style" type="text/css" href="~/css/style.scss.css" asp-append-version="true">
+	<link rel="preload" as="style" type="text/css" href="~/css/module.scss.css" asp-append-version="true">
+	<link rel="preload" as="style" type="text/css" href="~/css/responsive.scss.css" asp-append-version="true">
+	<link href="~/css/plugin.scss.css" rel="stylesheet" type="text/css" media="all" asp-append-version="true">
+	<!-- Build Main CSS -->
+	<link href="~/css/base.scss.css" rel="stylesheet" type="text/css" media="all" asp-append-version="true">
+	<link href="~/css/style.scss.css" rel="stylesheet" type="text/css" media="all" asp-append-version="true" />
+	<link href="~/css/module.scss.css" rel="stylesheet" type="text/css" media="all" asp-append-version="true">
+	<link href="~/css/responsive.scss.css" rel="stylesheet" type="text/css" media="all" asp-append-version="true">
+	<link rel="stylesheet" href="~/css/custom.css" asp-append-version="true">
+</head>
+<body>
+	<script src="~/js/jquery.js" type="text/javascript" asp-append-version="true"></script>
+	@await Component.InvokeAsync("Notyf")
+	@await RenderSectionAsync("Scripts", required: false)
+	<header class="header tophead">
+		<div class="mid-header wid_100">
+			<div class="container">
+				<div class="row">
+					<div class="content_header">
+						<div class="header-main">
+							<div class="menu-bar-h nav-mobile-button hidden-lg">
+								<a asp-controller="Home" asp-action="Index">
+									<img src="~/img/rolling.svg"
+										 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/i_menubar.png?1664094337757"
+										 alt="icon menu">
+								</a>
+							</div>
+							<div class="col-lg-2 logo-main">
+								<div class="logo">
+
+									<a asp-controller="Home" asp-action="Index" class="logo-wrapper ">
+										<img src="~/img/logo.png" alt="logo Delta Platinum">
+									</a>
+
+								</div>
+							</div>
+							<div class="col-lg-9 col-md-9 hidden-xs hidden-sm hidden-md padding-0 col-lg-offset-1 col-md-offset-1">
+								<div class="header-left">
+									<div class="bg-header-nav hidden-xs hidden-sm">
+										<div>
+											<div class="row row-noGutter-2">
+												<nav class="header-nav">
+													<ul class="item_big">
+
+
+														<li class="nav-item active ">
+															<a class="a-img" href="https://delta-platinum.mysapo.net/"><span>Trang chủ</span></a>
+														</li>
+
+
+
+														<li class="nav-item ">
+															<a class="a-img" href="https://delta-platinum.mysapo.net/collections/all">
+																<span>
+																	Tất cả tin
+																	rao
+																</span><i class="fa fa-angle-down"></i>
+															</a>
+															<ul class="item_small hidden-sm hidden-xs">
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/biet-thu" title="">Biệt thự </a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/can-ho" title="">Căn hộ </a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/chung-cu" title="">Chung cư </a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/nha-vuon" title="">Nhà vườn </a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/nha-pho" title="">Nhà phố </a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/nha-dat-cho-thue" title="">
+																		Nhà đất cho thuê
+																	</a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/nha-dat-ban" title="">Nhà đất bán </a>
+
+																</li>
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/du-an-360" title="">Dự án 360 </a>
+
+																</li>
+
+															</ul>
+														</li>
+
+
+
+														<li class="nav-item ">
+															<a class="a-img" href="https://delta-platinum.mysapo.net/tin-tuc">
+																<span>Tin tức</span><i class="fa fa-angle-down"></i>
+															</a>
+															<ul class="item_small hidden-sm hidden-xs">
+
+																<li>
+																	<a href="https://delta-platinum.mysapo.net/tin-thi-truong" title="">
+																		Tin thị trường
+																	</a>
+
+																</li>
+
+															</ul>
+														</li>
+
+
+
+														<li class="nav-item ">
+															<a class="a-img" href="https://delta-platinum.mysapo.net/gioi-thieu">
+																<span>
+																	Giới
+																	thiệu
+																</span>
+															</a>
+														</li>
+
+
+
+														<li class="nav-item ">
+															<a class="a-img" href="https://delta-platinum.mysapo.net/lien-he"><span>Liên hệ</span></a>
+														</li>
+														<li class="nav-item ">
+															<a class="a-img"><span></span></a>
+														</li>
+														@if (User.Identity.IsAuthenticated)
+														{
+															var name = User.Identity.Name;
+															var email = User.FindFirstValue("Email");
+															var image = User.FindFirstValue("Image");
+
+															<li class="nav-item logined" style="margin-left: 20px;">
+																<div class="img-logined">
+																	<img src="~/img/@(image == "" ? "Avatar-Default.jpg" : image)" alt="">
+																	<span>@name</span>
+																	<div class="select-logined">
+																		<ul>
+																			<li><a asp-controller="Accounts" asp-action="Profile">Thông tin cá nhân</a></li>
+																			<li><a asp-controller="ManagerProduct" asp-action="Index">Quản lí bài đăng</a></li>
+																			<li><a href="">Mua gói</a></li>
+																			<li><a asp-controller="Accounts" asp-action="Logout">Đăng xuất</a></li>
+                                                                        </ul>
+																</div>
+															</li>
+														}
+														else
+														{
+															<li class="nav-item ">
+																<a class="a-img btn-log re" asp-controller="Accounts" asp-action="Register"><span>Đăng ký</span></a>
+															</li>
+															<li class="nav-item ">
+																<a class="a-img btn-log" asp-controller="Accounts" asp-action="Login"><span>Đăng nhập</span></a>
+															</li>
+														}
+														
+
+														
+
+													</ul>
+												</nav>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</header>
+    @*<div class="container">
+        <main role="main" class="pb-3">
+        </main>
+    </div>*@
+            @RenderBody()
+	
+	<link rel="stylesheet" href="~/img/font-awesome.min.css" asp-append-version="true" media="all">
+	<footer class="footer " style="position:static;">
+		<div class="site-footer">
+			<div class="mid-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-3">
+
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xsm-12">
+							<div class="row rowsfooter">
+								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+									<div class="widget-ft first">
+										<h4 class="title-menu notbf">
+											<span>
+												Về chúng tôi
+											</span>
+										</h4>
+										<div class="desfot">
+											<p>Delta Platinum là một sản phẩm của Delta Web, với nỗ lực phát triển bền vững về thị trường bất
+												động sản, Delta Platinum đều có thể giúp bạn.<br>
+												Tìm tin bán nhà đất hoặc cho thuê nhà đất mới nhất bằng cách sử dụng công cụ tìm kiếm hoặc các
+												đường link ngay trên trang chủ.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+									<div class="widget-ft">
+										<h4 class="title-menu a-right">
+											<a role="button" class="collapsed" data-toggle="collapse" aria-expanded="false"
+												data-target="#collapseListMenu02" aria-controls="collapseListMenu02">
+												Chính sách <i class="fa fa-plus" aria-hidden="true"></i>
+											</a>
+										</h4>
+										<div class="collapse time_work" id="collapseListMenu02">
+											<ul class="list-menu">
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/">Trang chủ</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/collections/all">Tất cả tin
+														rao</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/tin-tuc">Tin tức</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/gioi-thieu">Giới thiệu</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/lien-he">Liên hệ</a></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+									<h4 class="title-menu notbf">
+										<span>
+											Liên hệ
+										</span>
+									</h4>
+									<div class="widget-ft last social_footer">
+										<div class="contactfooter">
+											<div class="flop">
+												<div class="fright">
+													<p>Bạn cần hỗ trợ ?</p>
+													<a class="fone" href="tel:19006750">1900 6750
+													</a>
+												</div>
+												<div class="section flex">
+													<div class="fright">
+														<span>An Thượng, Hà Nội, </span>
+													</div>
+												</div>
+												<div class="section flex">
+													<div class="fright">
+														<a href="mailto:deltawebltd@gmail.com">deltawebltd@gmail.com</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<div class="social_footer">
+											<ul class="follow_option">
+
+												<li>
+													<a href="https://delta-platinum.mysapo.net/#" title="Theo dõi Facebook Delta Platinum"><i
+															class="fa fa-facebook"></i></a>
+												</li>
+
+
+												<li>
+													<a href="https://delta-platinum.mysapo.net/#" title="Theo dõi Twitter Delta Platinum"><i
+															class="fa fa-twitter"></i></a>
+												</li>
+
+
+												<li>
+													<a href="https://delta-platinum.mysapo.net/#" title="Theo dõi Google Plus Delta Platinum"><i
+															class="fa fa-google"></i></a>
+												</li>
+
+
+												<li>
+													<a href="https://delta-platinum.mysapo.net/#" title="Theo dõi Instagam Delta Platinum"><i
+															class="fa fa-instagram"></i></a>
+												</li>
+
+
+												<li>
+													<a href="https://delta-platinum.mysapo.net/#" title="Theo dõi Youtube Delta Platinum"><i
+															class="fa fa-youtube-play"></i></a>
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+									<div class="widget-ft">
+										<h4 class="title-menu a-right">
+											<a role="button" class="collapsed" data-toggle="collapse" aria-expanded="false"
+												data-target="#collapseListMenu04" aria-controls="collapseListMenu04">
+												Hướng dẫn <i class="fa fa-plus" aria-hidden="true"></i>
+											</a>
+										</h4>
+										<div class="collapse time_work" id="collapseListMenu04">
+											<ul class="list-menu">
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/">Trang chủ</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/collections/all">Tất cả tin
+														rao</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/tin-tuc">Tin tức</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/gioi-thieu">Giới thiệu</a></li>
+
+												<li class="li_menu"><a href="https://delta-platinum.mysapo.net/lien-he">Liên hệ</a></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-footer-bottom copyright clearfix">
+				<div class="container">
+					<div class="inner clearfix">
+						<div class="row tablet">
+							<div id="copyright" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 a-center fot_copyright">
+								<span class="wsp">
+									<span class="mobile">© Bản quyền thuộc về <b><a href="https://deltaweb.bizwebvietnam.net/"
+												title="Delta Web" target="_blank">Delta Web</a></b>
+										<span class="hidden-xs"> | </span>
+									</span>
+									<span class="opacity1">Cung cấp bởi</span>
+									<a href="https://www.sapo.vn/?utm_campaign=cpn:site_khach_hang-plm:footer&amp;utm_source=site_khach_hang&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=site_khach_hang"
+										rel="nofollow" title="Sapo" target="_blank">Sapo</a>
+								</span>
+							</div>
+
+						</div>
+					</div>
+
+					<a href="https://delta-platinum.mysapo.net/#" id="back-to-top" class="backtop" title="Lên đầu trang"><i
+							class="fa fa-angle-up" aria-hidden="true"></i></a>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+
+	<script src="~/js/option-selectors.js" type="text/javascript" asp-append-version="true"></script>
+	<script src="~/js/api.jquery.js" type="text/javascript" asp-append-version="true"></script>
+	<script src="~/js/plugin.js" type="text/javascript" asp-append-version="true"></script>
+	<script src="~/js/f-1.js" asp-append-version="true"></script>
+	<script src="~/js/f2.js" asp-append-version="true"></script>
+	<script src="~/js/custom.js" asp-append-version="true"></script>
+	
+</body>
+<div style="position: absolute; top: 0px; display: block !important;"></div>
+</html>

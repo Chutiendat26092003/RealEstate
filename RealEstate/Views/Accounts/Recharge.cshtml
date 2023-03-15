@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model RealEstate.Models.RealEstateViewModel.ProductDetailView
+
+@{
+    ViewData["Title"] = "Manager Product";
+    User user = ViewBag.user;
+    var status = 2;
+
+}
+
+<section class="post-section space_top">
+    @await Html.PartialAsync("~/Views/ManagerProduct/_MenuPartialView.cshtml", user,  new ViewDataDictionary(ViewData) { { "status", status } })
+    <div class="post-content acc-pro-container">
+        <h3 class="list-post-titlte">Nạp tiền vào tài khoản</h3>
+        <p>Bạn hãy chọn một trong các hình thức thanh toán dưới đây</p>
+        <div class="recharge-main">
+            <a class="recharge-main-item">
+                <img src="~/img/svg/qr.svg" alt="">
+                <span>Thanh toán bằng mã QR (VNPAY)</span>
+            </a>
+            <div class="recharge-main-item">
+                <img src="~/img/svg/atm.svg" alt="">
+                <span>Thanh toán online qua thẻ ATM nội địa</span>
+            </div>
+            <div class="recharge-main-item">
+                <img src="~/img/svg/visa.svg" alt="">
+                <span>Thanh toán online bằng thẻ quốc tế (Visa, Master, JCB)</span>
+            </div>
+            <div class="recharge-main-item">
+                <img src="~/img/svg/bank.svg" alt="">
+                <span>Chuyển khoản ngân hàng</span>
+            </div>
+            <div class="recharge-main-item">
+                <img src="~/img/svg/pay.svg" alt="">
+                <span>Trả góp qua thẻ tín dụng (Visa, Master, JCB)</span>
+            </div>
+            <div class="recharge-main-item">
+                <img src="~/img/svg/payoo.svg" alt="">
+                <span>Thanh toán tại điểm giao dịch Payoo</span>
+            </div>
+        </div>
+    </div>
+</section>
+

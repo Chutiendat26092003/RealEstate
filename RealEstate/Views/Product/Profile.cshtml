@@ -1,0 +1,68 @@
+@model RealEstate.Models.Account
+@{
+    ViewData["Title"] = "Home Page";
+    var user = Model.Users.FirstOrDefault();
+}
+
+
+
+  <section class="profile">
+    <div class="profile-container">
+      <div class="profile-img">
+            <img src="./img/@(user.Image == "" ? "Avatar-Default.jpg" : user.Image)" alt="">
+        <div>
+          <p>Edogaru</p>
+          <span>edogaru@mail.com.my</span>
+        </div>
+      </div>
+      <div class="profile-description">
+        <div class="profile-description-item">
+          <label for="">Tên đầy đủ:</label>
+          <input type="text" value="Edogaru">
+        </div>
+        <div class="profile-description-item">
+          <label for="">Email:</label>
+          <input type="text" value="edogaru@mail.com.my">
+        </div>
+        <div class="profile-description-item">
+          <label for="">Địa chỉ:</label>
+          <input type="text" value="Tu liem, My Dinh, Ha Noi">
+        </div>
+        <div class="profile-description-item">
+          <label for="">Số điện thoại:</label>
+          <input type="text" value="0545466547">
+        </div>
+        <div class="profile-description-item">
+          <label for="">Số dư:</label>
+          <input type="text" value="500000">
+        </div>
+        <div class="profile-description-btn">
+          <button>Đăng bán</button>
+          <button>Mua gói</button>
+        </div>
+      </div>
+      <div class="profile-conect">
+        <div class="profile-conect-btn">
+          <button>+ Connect</button>
+        </div>
+        <div class="profile-conect-des">
+          <div>
+            <p>Facebook</p>
+            <span>userman12</span>
+          </div>
+          <div>
+            <p>Instagram</p>
+            <span>userman12</span>
+          </div>
+          <div>
+            <p>Twitter</p>
+            <span>userman12</span>
+          </div>
+          <div>
+            <p>Pinterest</p>
+            <span>userman12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

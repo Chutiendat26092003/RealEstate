@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model RealEstate.Models.User
+
+@{
+    var status = ViewData["status"];
+}
+
+
+<div class="post-menu">
+    <div class="post-menu-avatar">
+        <img src="~/img/@(Model.Image == "" ? "Avatar-Default.jpg" : Model.Image)" alt="">
+        <div>
+            <h4>@Model.FullName</h4>
+            <p>0 điểm <span><i class="fa fa-question-circle" aria-hidden="true"></i></span></p>
+        </div>
+    </div>
+    <div class="post-banlance">
+        <h3>Số dư tài khoản</h3>
+        <div class="post-banlance-item">
+            <p>Còn dư</p>
+            <span id="">@String.Format("{0:0,00}", Model.Balance) ₫</span>
+            <input id="postBalance" type="number" value="@Model.Balance">
+        </div>
+        <div class="post-banlance-item">
+            <p>Loại tài khoản</p>
+            <span>Thường</span>
+        </div>
+        <div class="post-banlance-code">
+            <div>
+                <h4>Mã chuyển khoản</h4>
+                <p>BDS22500110</p>
+            </div>
+            <span><i class="fa fa-clone" aria-hidden="true"></i></span>
+        </div>
+        <a asp-controller="Accounts" asp-action="Recharge" class="active"><span><i class="fa fa-credit-card" aria-hidden="true"></i></span> Nạp tiền</a>
+    </div>
+    <div class="post-banlance-list">
+        <h4><span><i class="fa fa-list-ul" aria-hidden="true"></i></span>Quản lý đăng</h4>
+        <ul>
+            <li><a asp-controller="ManagerProduct" asp-action="Create" class=@(status.ToString() == "1" ? "active" : "")>Đăng mới</a></li>
+            <li><a asp-controller="ManagerProduct" asp-action="Index" class=@(status.ToString() == "0" ? "active" : "")>Danh sách tin</a></li>
+            <li><a href="">Tài khoản PRO</a></li>
+        </ul>
+    </div>
+</div>

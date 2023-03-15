@@ -1,0 +1,74 @@
+﻿@model RealEstate.Models.User
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<section class="profile">
+    <form asp-action="EditProfile" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="profile-container">
+        @*<div class="profile-img">
+            <img src="~/img/@(user.Image == "" ? "Avatar-Default.jpg" : user.Image)" alt="">
+            <div>
+                <p>@user.FullName</p>
+                <span>@user.Email</span>
+            </div>
+        </div>*@
+        
+                <div class="post-content-item">
+                        <h3>Hình ảnh</h3>
+                        <div class="btn-upload_img">
+                            <label for="listImgUp">
+                                <span><i class="fa fa-upload" aria-hidden="true"></i></span>
+                                <h4>Bấm vào đây để chọn ảnh tải lên</h4>
+                            </label>
+                            <input type="file" asp-for="@Model.FrontImage" id="listImgUp" value="@Model.Image">
+                        </div>
+                        <div id="box-img-up"></div>
+                </div>
+                <div class="profile-description">
+                    <div class=" ">
+                        <label for="">Tên đầy đủ:</label>
+                        <input type="text" asp-for="@Model.FullName" value="@Model.FullName">
+                        <span asp-validation-for="@Model.FullName" class="text-danger"></span>
+                    </div>
+                    <div class="profile-description-item">
+                        <label for="">Email:</label>
+                        <input type="text" value="@Model.Email">
+                    </div>
+                    <div class=" ">
+                        <label for="">Địa chỉ:</label>
+                        <input type="text" asp-for="@Model.Address" value="@Model.Address">
+                        <span asp-validation-for="@Model.Address" class="text-danger"></span>
+                    </div>
+                    <div class=" ">
+                        <label for="">Số điện thoại:</label>
+                        <input type="text" asp-for="@Model.Phone" value="@Model.Phone">
+                        <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                    </div>
+                    @*<div class=" ">
+                        <label for="">Số dư:</label>
+                        <input type="text" asp-for="@Model.Balance" value="@String.Format("{0:0,00}", Model.Balance)₫">
+                        <span asp-validation-for="@Model.Balance" class="text-danger"></span>
+                    </div>*@
+
+                </div>
+            <div class="profile-conect">
+                <div class="profile-description-btn">
+                    <button class="btn btn-success" style="border-radius: unset; min-width: 180px;" type="submit">
+                        <span style="font-size: 17px;">Lưu thay đổi</span>
+                    </button>
+                </div>
+                <div class="profile-description-btn">
+                    <a class="btn btn-success" style="border-radius: unset; min-width: 180px;" asp-controller="Accounts" asp-action="Profile">
+                        <span style="font-size: 17px;">Từ Chối</span>
+                    </a>
+                </div>
+            </div>
+
+    </div>
+    </Form>
+</section>
+

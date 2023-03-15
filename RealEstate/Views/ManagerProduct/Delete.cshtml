@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model RealEstate.Models.Product
+
+@{
+    ViewData["Title"] = "Manager Product";
+    User user = ViewBag.user;
+    var status = 1;
+
+}
+
+@*<script src="~/ckeditor5-build-classic/ckeditor.js"></script>*@
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/super-build/ckeditor.js"></script>
+
+<section class="post-section space_top">
+    @await Html.PartialAsync("_MenuPartialView", user,  new ViewDataDictionary(ViewData) { { "status", status } })
+    <div class="post-content">
+            <input type="number" asp-for="@Model.Id" value="@Model.Id" hidden>
+            <div class="post-content-item">
+                <h3>Tên Bài Viết</h3>
+                <div class="post-content-area">
+                    <h4>@Model.NameProduct</h1>
+                </div>
+            </div>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="@Model.Id" />
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">Back to List</a>
+            </form>
+    </div>
+</section>
+

@@ -1,0 +1,1505 @@
+﻿@model RealEstate.Models.RealEstateViewModel.ProductAllView
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Menu mobile -->
+<div class="menu_mobile sidenav max_991 hidden-lg" id="mySidenav">
+	<ul class="ul_collections">
+		<li class="special">
+			<a href="https://delta-platinum.mysapo.net/collections/all">Tất cả danh mục</a>
+		</li>
+
+		<li class="level0 level-top parent">
+			<a href="https://delta-platinum.mysapo.net/">Trang chủ</a>
+
+		</li>
+
+		<li class="level0 level-top parent">
+			<a href="https://delta-platinum.mysapo.net/collections/all">Tất cả tin rao</a>
+
+			<i class="fa fa-angle-down"></i>
+			<ul class="level0" style="display:none;">
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/biet-thu"> <span>Biệt thự</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/can-ho"> <span>Căn hộ</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/chung-cu"> <span>Chung cư</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/nha-vuon"> <span>Nhà vườn</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/nha-pho"> <span>Nhà phố</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/nha-dat-cho-thue"> <span>Nhà đất cho thuê</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/nha-dat-ban"> <span>Nhà đất bán</span> </a>
+
+				</li>
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/du-an-360"> <span>Dự án 360</span> </a>
+
+				</li>
+
+			</ul>
+
+		</li>
+
+		<li class="level0 level-top parent">
+			<a href="https://delta-platinum.mysapo.net/tin-tuc">Tin tức</a>
+
+			<i class="fa fa-angle-down"></i>
+			<ul class="level0" style="display:none;">
+
+				<li class="level1 ">
+					<a href="https://delta-platinum.mysapo.net/tin-thi-truong"> <span>Tin thị trường</span> </a>
+
+				</li>
+
+			</ul>
+
+		</li>
+
+		<li class="level0 level-top parent">
+			<a href="https://delta-platinum.mysapo.net/gioi-thieu">Giới thiệu</a>
+
+		</li>
+
+		<li class="level0 level-top parent">
+			<a href="https://delta-platinum.mysapo.net/lien-he">Liên hệ</a>
+
+		</li>
+
+	</ul>
+
+
+
+</div>
+<!-- End -->
+
+<div id="menu-overlay" class=""></div>
+<h1 class="hidden">Delta Platinum - Kênh thông tin số 1 về bất động sản tại Việt Nam</h1>
+
+
+
+
+<section class="awe-section-1">
+	<div class="home-slider owl-carousel owl-theme owl-loaded owl-drag" data-dot="false" data-nav="true"
+		 data-loop="true" data-play="true" data-lg-items="1" data-md-items="1" data-sm-items="1" data-xs-items="1"
+		 data-margin="0">
+
+		<div class="owl-stage-outer">
+			<div class="owl-stage"
+				 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1520px;">
+				<div class="owl-item active" style="width: 1520px;">
+					<div class="item">
+						<a href="https://delta-platinum.mysapo.net/#" class="clearfix">
+							<picture>
+								<source srcset="//bizweb.dktcdn.net/thumb/large/100/336/794/themes/692935/assets/slider_1.png?1664094337757"
+										media="(max-width: 767px)">
+								<img src="~/img/slider_1.png" alt="Slider 1">
+							</picture>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="module_search_pro">
+
+		<div class="container">
+			<div class="wrap_form_search">
+				<div class="text_large a-center">
+					<h4>Tìm kiếm nhà đất mơ ước</h4>
+				</div>
+				<div class="search_form_pro">
+					<div class="search_group_wrap">
+						<div class="group_insearch">
+							<div class="group_block group_1 advance_normal">
+								<select name="option1" id="option_1">
+									<option data-link="bán" value="bán">Bán</option>
+									<option data-link="thuê" value="thue">Thuê</option>
+								</select>
+							</div>
+							<div class="group_block group_2 advance_normal">
+								<div class="wrap_option_search">
+									<div class="input-group search_form">
+										<input type="text" name="query" value="" placeholder="Tìm dự án, biệt thự... "
+											   class="input-group-field st-default-search-input search-text tdq_input" autocomplete="off">
+									</div>
+									<div class="action_pro">
+										<p><i class="fa fa-cogs"></i><span class="hidden-xs hidden-sm">&nbsp;Nâng cao</span></p>
+									</div>
+								</div>
+								<div class="button_search_sm">
+									<button class="delta_search">
+										<span>
+											<i class="fa fa-search"></i><span class="hidden-xs hidden-sm">
+												Tìm
+												kiếm nhanh
+											</span>
+										</span>
+									</button>
+								</div>
+							</div>
+							<div class="advance_option offFunction" style="display:none;">
+								<div class="option_ advance_1">
+									<select name="category1" id="category1">
+										<option value="">Tỉnh/thành phố</option>
+
+
+										<option data-link="1740077" value="/ha-noi">Hà Nội</option>
+
+
+										<option data-link="1740079" value="/tp-ho-chi-minh">Tp. Hồ Chí Minh</option>
+
+
+										<option data-link="1740080" value="/da-nang">Đà Nẵng</option>
+
+
+										<option data-link="1740081" value="/nha-trang">Nha Trang</option>
+
+
+										<option data-link="1740082" value="/nghe-an">Nghệ An</option>
+
+
+										<option data-link="1740083" value="/hai-phong">Hải Phòng</option>
+
+
+										<option data-link="1740087" value="/quang-ninh">Quảng Ninh</option>
+
+									</select>
+								</div>
+
+								<div class="option_ advance_2">
+									<select class="subcat" id="category2" name="category2">
+										<option disabled="disabled" selected="selected">Quận/huyện</option>
+
+									</select>
+								</div>
+
+								<div class="option_ advance_3">
+									<select class="subcat" id="category3" name="category3">
+										<option disabled="disabled" selected="selected">Kiểu dự án</option>
+
+
+									</select>
+								</div>
+
+								<div class="option_ advance_dientich">
+
+									<select name="category4" id="category4">
+										<option value="">Diện tích</option>
+
+
+
+										<option data-link="Từ%2020%20-%2050%20m2" value="Từ 20 - 50 m2">Từ 20 - 50 m2</option>
+
+
+
+										<option data-link="50%20-%2090%20m2" value="50 - 90 m2">50 - 90 m2</option>
+
+
+
+										<option data-link="90%20-%20120%20m2" value="90 - 120 m2">90 - 120 m2</option>
+
+
+
+										<option data-link="120%20-%20160%20m2" value="120 - 160 m2">120 - 160 m2</option>
+
+
+
+										<option data-link="Trên%20160%20m2" value="Trên 160 m2">Trên 160 m2</option>
+
+
+
+										<option data-link="Dưới%2020%20m2" value="Dưới 20 m2">Dưới 20 m2</option>
+
+									</select>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="collections_link">
+					<p>Tìm nhanh theo kiểu dáng</p>
+					<div class="section group_collection">
+						@foreach (var item in Model.Categories)
+						{
+							<div class="item_types">
+								<div class="icon">
+									<a class="thumb_icon" href="https://delta-platinum.mysapo.net/biet-thu">
+										<img src="~/img/@item.ImageURL" alt="@item.NameCategory">
+									</a>
+								</div>
+								<h3 class="h3">
+									<a href="https://delta-platinum.mysapo.net/biet-thu" title="@item.NameCategory">@item.NameCategory</a>
+								</h3>
+							</div>
+						}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+
+
+
+<section class="awe-section-2">
+	<section class="section_project_news section_tab_product">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="module_title_trow">
+						<h2 class="h2">
+							<a href="https://delta-platinum.mysapo.net/tat-ca-tin-rao" title="Dự án mới nhất">
+								Dự án <span>mới nhất</span>
+							</a>
+						</h2>
+						<p>Dự án mới nhất này có đang ở gần bạn ?</p>
+					</div>
+				</div>
+				<div class="wrap_tab_index e-tabs not-dqtab ajax-tab-1 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+					 data-section="ajax-tab-1">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="wrap_tab">
+								<span class="hidden-md hidden-lg button_show_tab">
+									<i class="fa fa-align-right"></i>
+								</span>
+								<ul class="tabs tabs-title tabtitle1 ajax clearfix link_tab_check_click closeit">
+									@foreach (var item in Model.Categories)
+									{
+										<li class="tab-link has-content current" data-tab="tab-1" data-url="/biet-thu">
+											<span>@item.NameCategory</span>
+										</li>
+									}
+
+								</ul>
+
+								<div class="tab-1 tab-content tabcontent_ajaxType1 owl_nav_custome1 current">
+									<div class="" data-dot="true" data-nav="false" data-lg-items="3" data-md-items="3"
+										 data-height="true" data-xs-items="1" data-sm-items="2" data-margin="20">
+
+										<!-- ADD DIV -->
+
+										<div class="owl-stage-outer">
+											<div class="owl-stage"
+												 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1191px;">
+												<div class="owl-item active">
+													<div class="item_product_main itemcustome"
+														 style="display: grid; grid-template-columns: auto auto auto; column-gap: 20px;">
+														@foreach(var item in Model.Products)
+														{
+															var imgURL = item.ProductImages.FirstOrDefault().NameImage;
+															var user = item.TransactionExcepts.Select(m => m.User).FirstOrDefault();
+
+															<div class="product-box product-item-main product-item-compare">
+															<div class="product-thumbnail">
+																<a class="image_thumb p_img"
+																   asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+																   title="@item.NameProduct">
+																		<img src="~/img/@imgURL"
+																		 alt="@item.NameProduct">
+																</a>
+																@if (item.Directory == '1')
+																	{
+																		<div class="label_thumb">
+																			<div class="wrap_lable">
+																				<span class="lb thue">Cho thuê</span>
+																			</div>
+																		</div>
+																	} else
+																	{
+																		<div class="label_thumb">
+																			<div class="wrap_lable">
+
+																				<span class="lb ban">Bán</span>
+
+
+
+																				<span class="lb hot">Hot</span>
+
+																			</div>
+																		</div>
+																		
+																	}
+
+
+																	<a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+																   title="Dự án hỗ trợ xem ảnh 360 độ" class="degrees">
+																	<img src="~/img/360-degrees.png"
+																		 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/360-degrees.png?1664094337757"
+																		 alt="Tin 306 độ">
+																</a>
+															</div>
+															<div class="product-info product-bottom mh">
+
+																<h3 class="product-name">
+																		<a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+																	   title="@item.NameProduct">@item.NameProduct</a>
+																</h3>
+																<div class="tag_mix section">
+																	<ul class="padding-0">
+																		<li>
+																			<span><i class="fa fa-map-marker"></i>&nbsp;</span><span>
+																				@item.AddressProduct
+																			</span>
+																		</li>
+																	</ul>
+																</div>
+																<div class="section">
+
+																	<div class="group_contact">
+																		<a class="inIcon contact" href="tel:@user.Phone" title="Gọi ngay">
+																			<i class="fa fa-phone"></i>
+																		</a>
+																	</div>
+																	<div class="blockprice">
+																				<div class="product-item-price price-box">
+																					@if (item.Directory == '1')
+																					{
+																							<span class="special-price">
+																								<span class="price product-price">@String.Format("{0:0,00}", @item.Price )₫</span>/Tháng
+																							</span>
+																					} else
+																					{
+																							<span class="special-price">
+																									<span class="price product-price">@String.Format("{0:0,00}", @item.Price )₫</span>
+																							</span>
+																					}
+
+																				</div>
+																			</div>
+																	</div>
+
+															</div>
+															<div class="section bottom_extentions">
+																<ul>
+																	<li>
+																		<span>
+																			<img src="~/img/ped.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/ped.png?1664094337757"
+																				 alt="Giường ngủ">&nbsp;@item.Bedroom Ngủ
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/bath.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/bath.png?1664094337757"
+																				 alt="Phòng tắm">&nbsp;@item.Restrooms Tắm
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/square.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/square.png?1664094337757"
+																				 alt="Diện tích">&nbsp;@item.Area m2
+																		</span>
+																	</li>
+																</ul>
+															</div>
+
+														</div>
+														}
+														
+														@*<div class="product-box product-item-main product-item-compare">
+
+															<div class="product-thumbnail">
+
+																<a class="image_thumb p_img"
+																   href="https://delta-platinum.mysapo.net/cho-thue-biet-thu-hien-dai"
+																   title="Cho thuê biệt thự hiện đại">
+
+																	<img src="~/img/6b.jpg"
+																		 data-lazyload="//bizweb.dktcdn.net/thumb/large/100/336/794/products/6b.jpg?v=1540398749000"
+																		 alt="Cho thuê biệt thự hiện đại">
+
+																</a>
+																<div class="label_thumb">
+																	<div class="wrap_lable">
+
+
+																		<span class="lb thue">Cho thuê</span>
+
+
+																	</div>
+																</div>
+
+																<a href="https://delta-platinum.mysapo.net/cho-thue-biet-thu-hien-dai"
+																   title="Dự án hỗ trợ xem ảnh 360 độ" class="degrees">
+																	<img src="~/img/360-degrees.png"
+																		 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/360-degrees.png?1664094337757"
+																		 alt="Tin 306 độ">
+																</a>
+
+
+															</div>
+															<div class="product-info product-bottom mh">
+
+																<h3 class="product-name">
+																	<a href="https://delta-platinum.mysapo.net/cho-thue-biet-thu-hien-dai"
+																	   title="Cho thuê biệt thự hiện đại">Cho thuê biệt thự hiện đại</a>
+																</h3>
+																<div class="tag_mix section">
+																	<ul class="padding-0">
+																		<li>
+																			<span><i class="fa fa-map-marker"></i>&nbsp;</span><span>
+																				Phường 15 Bình Thạnh
+																				Hồ Chí Minh
+																			</span>
+																		</li>
+																	</ul>
+																</div>
+																<div class="section">
+
+																	<div class="group_contact">
+																		<a class="inIcon contact" href="tel:0123456789" title="Gọi ngay">
+																			<i class="fa fa-phone"></i>
+																		</a>
+																	</div>
+																	<div class="blockprice">
+																		<div class="product-item-price price-box">
+
+
+																			<span class="special-price">
+																				<span class="price product-price">48.000.000₫</span>/Tháng
+																			</span>
+
+
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+															<div class="section bottom_extentions">
+																<ul>
+																	<li>
+																		<span>
+																			<img src="~/img/ped.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/ped.png?1664094337757"
+																				 alt="Giường ngủ">&nbsp;3 Ngủ
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/bath.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/bath.png?1664094337757"
+																				 alt="Phòng tắm">&nbsp;2 Tắm
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/square.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/square.png?1664094337757"
+																				 alt="Diện tích">&nbsp;175m2
+																		</span>
+																	</li>
+																</ul>
+															</div>
+
+														</div>
+														<div class="product-box product-item-main product-item-compare">
+
+															<div class="product-thumbnail">
+
+																<a class="image_thumb p_img"
+																   href="https://delta-platinum.mysapo.net/biet-thu-sunshine-group"
+																   title="Biệt thự Sunshine Group">
+
+																	<img src="~/img/modern-villa-vancouver-splyce-800x500.jpg"
+																		 data-lazyload="//bizweb.dktcdn.net/thumb/large/100/336/794/products/modern-villa-vancouver-splyce-800x500.jpg?v=1540397698000"
+																		 alt="Biệt thự Sunshine Group">
+
+																</a>
+																<div class="label_thumb">
+																	<div class="wrap_lable">
+
+																		<span class="lb ban">Bán</span>
+
+
+
+																		<span class="lb hot">Hot</span>
+
+																	</div>
+																</div>
+
+																<a href="https://delta-platinum.mysapo.net/biet-thu-sunshine-group"
+																   title="Dự án hỗ trợ xem ảnh 360 độ" class="degrees">
+																	<img src="~/img/360-degrees.png"
+																		 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/360-degrees.png?1664094337757"
+																		 alt="Tin 306 độ">
+																</a>
+
+
+																<span class="camera">
+																	<img src="~/img/video-camera.png"
+																		 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/video-camera.png?1664094337757"
+																		 alt="Tin đăng có video">
+																</span>
+
+															</div>
+															<div class="product-info product-bottom mh">
+
+																<h3 class="product-name">
+																	<a href="https://delta-platinum.mysapo.net/biet-thu-sunshine-group"
+																	   title="Biệt thự Sunshine Group">Biệt thự Sunshine Group</a>
+																</h3>
+																<div class="tag_mix section">
+																	<ul class="padding-0">
+																		<li>
+																			<span><i class="fa fa-map-marker"></i>&nbsp;</span><span>
+																				Quảng An Tây Hồ Hà
+																				Nội
+																			</span>
+																		</li>
+																	</ul>
+																</div>
+																<div class="section">
+
+																	<div class="group_contact">
+																		<a class="inIcon contact" href="tel:0904448888" title="Gọi ngay">
+																			<i class="fa fa-phone"></i>
+																		</a>
+																	</div>
+																	<div class="blockprice">
+																		<div class="product-item-price price-box">
+
+
+																			<span class="special-price">
+																				<span class="price product-price">15.000.000.000₫</span>
+																			</span>
+
+
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+															<div class="section bottom_extentions">
+																<ul>
+																	<li>
+																		<span>
+																			<img src="~/img/ped.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/ped.png?1664094337757"
+																				 alt="Giường ngủ">&nbsp;6 Ngủ
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/bath.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/bath.png?1664094337757"
+																				 alt="Phòng tắm">&nbsp;6 Tắm
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/square.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/square.png?1664094337757"
+																				 alt="Diện tích">&nbsp;215m2
+																		</span>
+																	</li>
+																</ul>
+															</div>
+
+														</div>
+														<div class="product-box product-item-main product-item-compare">
+
+															<div class="product-thumbnail">
+
+																<a class="image_thumb p_img"
+																   href="https://delta-platinum.mysapo.net/ban-biet-thu-hien-dai-moi-xay"
+																   title="Bán biệt thự hiện đại mới xây">
+
+																	<img src="~/img/florida-architecture-010815-02.jpg"
+																		 data-lazyload="//bizweb.dktcdn.net/thumb/large/100/336/794/products/florida-architecture-010815-02.jpg?v=1540395617000"
+																		 alt="Bán biệt thự hiện đại mới xây">
+
+																</a>
+																<div class="label_thumb">
+																	<div class="wrap_lable">
+
+																		<span class="lb ban">Bán</span>
+
+
+
+																		<span class="lb hot">Hot</span>
+
+																	</div>
+																</div>
+
+
+															</div>
+															<div class="product-info product-bottom mh">
+
+																<h3 class="product-name">
+																	<a href="https://delta-platinum.mysapo.net/ban-biet-thu-hien-dai-moi-xay"
+																	   title="Bán biệt thự hiện đại mới xây">Bán biệt thự hiện đại mới xây</a>
+																</h3>
+																<div class="tag_mix section">
+																	<ul class="padding-0">
+																		<li>
+																			<span><i class="fa fa-map-marker"></i>&nbsp;</span><span>
+																				Xuân Thủy Cầu Giấy Hà
+																				Nội
+																			</span>
+																		</li>
+																	</ul>
+																</div>
+																<div class="section">
+
+																	<div class="group_contact">
+																		<a class="inIcon contact" href="tel:0123456789" title="Gọi ngay">
+																			<i class="fa fa-phone"></i>
+																		</a>
+																	</div>
+																	<div class="blockprice">
+																		<div class="product-item-price price-box">
+
+
+																			<span class="special-price">
+																				<span class="price product-price">12.500.000.000₫</span>
+																			</span>
+
+
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+															<div class="section bottom_extentions">
+																<ul>
+																	<li>
+																		<span>
+																			<img src="~/img/ped.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/ped.png?1664094337757"
+																				 alt="Giường ngủ">&nbsp;3 Ngủ
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/bath.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/bath.png?1664094337757"
+																				 alt="Phòng tắm">&nbsp;4 Tắm
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/square.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/square.png?1664094337757"
+																				 alt="Diện tích">&nbsp;96 m2
+																		</span>
+																	</li>
+																</ul>
+															</div>
+
+														</div>
+														<div class="product-box product-item-main product-item-compare">
+
+															<div class="product-thumbnail">
+
+																<a class="image_thumb p_img"
+																   href="https://delta-platinum.mysapo.net/ban-biet-thu-n03-sai-dong"
+																   title="Bán biệt thự N03 Sài Đồng">
+
+																	<img src="~/img/1-190.jpg"
+																		 data-lazyload="//bizweb.dktcdn.net/thumb/large/100/336/794/products/1-190.jpg?v=1540394909000"
+																		 alt="Bán biệt thự N03 Sài Đồng">
+
+																</a>
+																<div class="label_thumb">
+																	<div class="wrap_lable">
+
+																		<span class="lb ban">Bán</span>
+
+
+
+																	</div>
+																</div>
+
+
+																<span class="camera">
+																	<img src="~/img/video-camera.png"
+																		 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/video-camera.png?1664094337757"
+																		 alt="Tin đăng có video">
+																</span>
+
+															</div>
+															<div class="product-info product-bottom mh">
+
+																<h3 class="product-name">
+																	<a href="https://delta-platinum.mysapo.net/ban-biet-thu-n03-sai-dong"
+																	   title="Bán biệt thự N03 Sài Đồng">Bán biệt thự N03 Sài Đồng</a>
+																</h3>
+																<div class="tag_mix section">
+																	<ul class="padding-0">
+																		<li>
+																			<span><i class="fa fa-map-marker"></i>&nbsp;</span><span>
+																				Sài Đồng Long Biên Hà
+																				Nội
+																			</span>
+																		</li>
+																	</ul>
+																</div>
+																<div class="section">
+
+																	<div class="group_contact">
+																		<a class="inIcon contact" href="tel:0388287614" title="Gọi ngay">
+																			<i class="fa fa-phone"></i>
+																		</a>
+																	</div>
+																	<div class="blockprice">
+																		<div class="product-item-price price-box">
+
+
+																			<span class="special-price">
+																				<span class="price product-price">18.700.000.000₫</span>
+																			</span>
+
+
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+															<div class="section bottom_extentions">
+																<ul>
+																	<li>
+																		<span>
+																			<img src="~/img/ped.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/ped.png?1664094337757"
+																				 alt="Giường ngủ">&nbsp;6 Ngủ
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/bath.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/bath.png?1664094337757"
+																				 alt="Phòng tắm">&nbsp;5 Tắm
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/square.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/square.png?1664094337757"
+																				 alt="Diện tích">&nbsp;300m2
+																		</span>
+																	</li>
+																</ul>
+															</div>
+
+														</div>
+														<div class="product-box product-item-main product-item-compare">
+
+															<div class="product-thumbnail">
+
+																<a class="image_thumb p_img"
+																   href="https://delta-platinum.mysapo.net/ban-biet-thu-khu-jamona-golden-silk"
+																   title="Bán biệt thự khu Jamona Golden Silk">
+
+																	<img src="~/img/the-ocean-villas-25.jpg"
+																		 data-lazyload="//bizweb.dktcdn.net/thumb/large/100/336/794/products/the-ocean-villas-25.jpg?v=1540392134000"
+																		 alt="Bán biệt thự khu Jamona Golden Silk">
+
+																</a>
+																<div class="label_thumb">
+																	<div class="wrap_lable">
+
+																		<span class="lb ban">Bán</span>
+
+
+
+																	</div>
+																</div>
+
+
+															</div>
+															<div class="product-info product-bottom mh">
+
+																<h3 class="product-name">
+																	<a href="https://delta-platinum.mysapo.net/ban-biet-thu-khu-jamona-golden-silk"
+																	   title="Bán biệt thự khu Jamona Golden Silk">
+																		Bán biệt thự khu Jamona Golden
+																		Silk
+																	</a>
+																</h3>
+																<div class="tag_mix section">
+																	<ul class="padding-0">
+																		<li>
+																			<span><i class="fa fa-map-marker"></i>&nbsp;</span><span>
+																				Sài Đồng Long Biên Hà
+																				Nội
+																			</span>
+																		</li>
+																	</ul>
+																</div>
+																<div class="section">
+
+																	<div class="group_contact">
+																		<a class="inIcon contact" href="tel:0388287614" title="Gọi ngay">
+																			<i class="fa fa-phone"></i>
+																		</a>
+																	</div>
+																	<div class="blockprice">
+																		<div class="product-item-price price-box">
+
+
+																			<span class="special-price">
+																				<span class="price product-price">14.000.000.000₫</span>
+																			</span>
+
+
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+															<div class="section bottom_extentions">
+																<ul>
+																	<li>
+																		<span>
+																			<img src="~/img/ped.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/ped.png?1664094337757"
+																				 alt="Giường ngủ">&nbsp;4 Ngủ
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/bath.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/bath.png?1664094337757"
+																				 alt="Phòng tắm">&nbsp;3 Tắm
+																		</span>
+																	</li>
+																	<li>
+																		<span>
+																			<img src="~/img/square.png"
+																				 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/square.png?1664094337757"
+																				 alt="Diện tích">&nbsp;162m2
+																		</span>
+																	</li>
+																</ul>
+															</div>
+
+														</div>*@
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+							</div>
+
+							<div class="tab-2 tab-content tabcontent_ajaxType1 owl_nav_custome1">
+							</div>
+
+							<div class="tab-3 tab-content tabcontent_ajaxType1 owl_nav_custome1">
+							</div>
+
+							<div class="tab-4 tab-content tabcontent_ajaxType1 owl_nav_custome1">
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+</section>
+
+
+
+
+<section class="awe-section-3">
+	<section class="section_type_of_project">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="module_title_trow a-center">
+						<h2 class="h2">
+							<span>
+								Mẫu dự án <span>tiêu biểu</span>
+							</span>
+						</h2>
+						<p class="block">Sự khác biệt mang tên phong cách</p>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+					@*	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 item_proprety">
+							<div class="wrap_banner">
+								<img src="~/img/banner_project_1.png"
+									 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/banner_project_1.png?1664094337757"
+									 alt="Căn hộ">
+								<div class="wr_title">
+									<div class="wrap_title_ed">
+										<h2 class="h2"><a href="https://delta-platinum.mysapo.net/can-ho" title="Căn hộ">Căn hộ</a></h2>
+										<p>2&nbsp;Dự án</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 item_proprety">
+							<div class="wrap_banner">
+								<img src="~/img/banner_project_2.png"
+									 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/banner_project_2.png?1664094337757"
+									 alt="Chung cư">
+								<div class="wr_title">
+									<div class="wrap_title_ed">
+										<h2 class="h2">
+											<a href="https://delta-platinum.mysapo.net/chung-cu" title="Chung cư">Chung cư</a>
+										</h2>
+										<p>2&nbsp;Dự án</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 item_proprety">
+							<div class="wrap_banner">
+								<img src="~/img/banner_project_3.png"
+									 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/banner_project_3.png?1664094337757"
+									 alt="Nhà vườn">
+								<div class="wr_title">
+									<div class="wrap_title_ed">
+										<h2 class="h2">
+											<a href="https://delta-platinum.mysapo.net/nha-vuon" title="Nhà vườn">Nhà vườn</a>
+										</h2>
+										<p>2&nbsp;Dự án</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 item_proprety">
+							<div class="wrap_banner">
+								<img src="~/img/banner_project_4.png"
+									 data-lazyload="//bizweb.dktcdn.net/100/336/794/themes/692935/assets/banner_project_4.png?1664094337757"
+									 alt="Biệt thự">
+								<div class="wr_title">
+									<div class="wrap_title_ed">
+										<h2 class="h2">
+											<a href="https://delta-platinum.mysapo.net/biet-thu" title="Biệt thự">Biệt thự</a>
+										</h2>
+										<p>6&nbsp;Dự án</p>
+									</div>
+								</div>
+							</div>
+						</div>*@
+						@foreach (var item in Model.Categories)
+						{
+							var totalProduct = Model.Products.Where(p => p.CategoryId == item.Id).ToList().Count();
+
+							if (item.Id == 1)
+							{
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 item_proprety">
+									<div class="wrap_banner">
+										<img src="~/img/@item.BannerURL"
+									 alt="@item.NameCategory">
+										<div class="wr_title">
+											<div class="wrap_title_ed">
+												<h2 class="h2">
+													<a href="https://delta-platinum.mysapo.net/can-ho" title="@item.NameCategory">@item.NameCategory</a>
+												<p>@totalProduct&nbsp;Dự án</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							} else
+							{
+								<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 item_proprety">
+									<div class="wrap_banner">
+										<img src="~/img/@item.BannerURL"
+											 alt="@item.NameCategory">
+										<div class="wr_title">
+											<div class="wrap_title_ed">
+												<h2 class="h2">
+													<a href="https://delta-platinum.mysapo.net/nha-pho" title="@item.NameCategory">@item.NameCategory</a>
+												</h2>
+													<p>@totalProduct&nbsp;Dự án</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							}
+
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+
+
+<section class="awe-section-5">
+	<section class="section_blog_and_brand">
+		<div class="container">
+			<div class="wrap_bgd">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="module_title_trow margin-bottom-40 a-left">
+							<h2 class="h2">
+								<a href="https://delta-platinum.mysapo.net/tin-thi-truong" title="Tin tức Thị trường">
+									Tin tức <span>Thị trường</span>
+								</a>
+							</h2>
+							<p class="block">Thông tin thị trường bất động sản 24/7</p>
+						</div>
+
+						<div class="section blog_owlrap wrap_listblog">
+
+							<div class="blogwrap row">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 first_blog">
+
+									<div class="itemblog">
+										<div class="blog_index">
+											<div class="myblog">
+												<div class="image-blog-left">
+
+													<a href="https://delta-platinum.mysapo.net/nhung-li-do-day-thu-hut-cua-du-an-chung-cu-new-city">
+														<img src="~/img/20180615142644-cd98.jpg"
+															 data-lazyload="//bizweb.dktcdn.net/thumb/1024x1024/100/336/794/articles/20180615142644-cd98.jpg?v=1540401640587"
+															 title="Những lí do đầy thu hút của dự án chung cư New City"
+															 alt="Những lí do đầy thu hút của dự án chung cư New City">
+													</a>
+
+												</div>
+												<div class="content_blog">
+
+													<span class="time_post">
+														<i class="fa fa-calendar-check"></i>&nbsp;25/10/2018&nbsp;<span>
+															<i class="fa fa-bookmark"></i>&nbsp;2&nbsp; Bình luận
+														</span>
+													</span>
+													<h3 class="h3">
+														<a href="https://delta-platinum.mysapo.net/nhung-li-do-day-thu-hut-cua-du-an-chung-cu-new-city"
+														   title="Những lí do đầy thu hút của dự án chung cư New City">
+															Những lí do đầy thu hút của
+															dự án chung cư New City
+														</a>
+													</h3>
+
+													<div class="summary_item_blog">
+														Dự án&nbsp;chung cư cao cấp&nbsp;new city tại quận 2 gồm hơn 4000 căn hộ tại số 27 đường
+														Mai Chí Thọ, Thủ Thiêm do CD...<a href="https://delta-platinum.mysapo.net/nhung-li-do-day-thu-hut-cua-du-an-chung-cu-new-city"
+															  title="Đọc tiếp">Đọc tiếp</a>
+													</div>
+													<div class="post_author">
+														<div class="frist">
+															<span>
+																<img src="~/img/author.png"
+																	 data-lazyload="//bizweb.dktcdn.net/thumb/icon/100/336/794/themes/692935/assets/author.png?1664094337757"
+																	 alt="Đào Quý Thương">
+															</span>
+															<p>Đào Quý Thương</p>
+														</div>
+														<div class="sharing_button">
+															<span><i class="fa fa-share-alt"></i></span>
+															<div class="social-media">
+
+
+																<a target="_blank"
+																   href="https://www.facebook.com/sharer.php?u=https://delta-platinum.mysapo.net/nhung-li-do-day-thu-hut-cua-du-an-chung-cu-new-city"
+																   class="share-facebook" title="Chia sẻ lên Facebook">
+																	<i class="fa fa-facebook"></i>
+																</a>
+																<a target="_blank"
+																   href="https://twitter.com/share?text=Nh%E1%BB%AFngl%C3%ADdo%C4%91%E1%BA%A7ythuh%C3%BAtc%E1%BB%A7ad%E1%BB%B1%C3%A1nchungc%C6%B0NewCity&amp;url=https://delta-platinum.mysapo.net/nhung-li-do-day-thu-hut-cua-du-an-chung-cu-new-city"
+																   class="share-twitter" title="Chia sẻ lên Twitter">
+																	<i class="fa fa-twitter"></i>
+																</a>
+																<a target="_blank"
+																   href="https://plus.google.com/share?url=https://delta-platinum.mysapo.net/nhung-li-do-day-thu-hut-cua-du-an-chung-cu-new-city"
+																   class="share-google" title="+1">
+																	<i class="fa fa-google"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+									<div class="itemblog listblog">
+										<div class="blog_index">
+											<div class="myblog">
+												<div class="image-blog-left">
+
+													<a href="https://delta-platinum.mysapo.net/tinh-hinh-thi-truong-bat-dong-san-nam-2018-se-dien-ra-nhu-the-nao">
+														<img src="~/img/shophouse-dia-trung-hai-primavera-tien-ich-du-an-04.jpg"
+															 data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/336/794/articles/shophouse-dia-trung-hai-primavera-tien-ich-du-an-04.jpg?v=1540401016003"
+															 title="Tình hình thị trường bất động sản năm 2018 sẽ diễn ra như thế nào"
+															 alt="Tình hình thị trường bất động sản năm 2018 sẽ diễn ra như thế nào">
+													</a>
+
+												</div>
+												<div class="content_blog">
+													<h3 class="h3">
+														<a href="https://delta-platinum.mysapo.net/tinh-hinh-thi-truong-bat-dong-san-nam-2018-se-dien-ra-nhu-the-nao"
+														   title="Tình hình thị trường bất động sản năm 2018 sẽ diễn ra như thế nào">
+															Tình hình thị
+															trường bất động sản năm 2018 sẽ diễn ra như thế nào
+														</a>
+													</h3>
+
+													<span class="time_post">
+														<i class="fa fa-calendar-check"></i>&nbsp;25/10/2018&nbsp;<span>
+															<i class="fa fa-bookmark"></i>&nbsp;1<span class="hidden-xs">
+																&nbsp; Bình
+																luận
+															</span>
+														</span>
+													</span>
+
+													<div class="post_author">
+														<div class="sharing_button listblogs">
+															<span><i class="fa fa-share-alt"></i></span>
+															<div class="social-media">
+
+
+																<a target="_blank"
+																   href="https://www.facebook.com/sharer.php?u=https://delta-platinum.mysapo.net/tinh-hinh-thi-truong-bat-dong-san-nam-2018-se-dien-ra-nhu-the-nao"
+																   class="share-facebook" title="Chia sẻ lên Facebook">
+																	<i class="fa fa-facebook"></i>
+																</a>
+																<a target="_blank"
+																   href="https://twitter.com/share?text=T%C3%ACnhh%C3%ACnhth%E1%BB%8Btr%C6%B0%E1%BB%9Dngb%E1%BA%A5t%C4%91%E1%BB%99ngs%E1%BA%A3nn%C4%83m2018s%E1%BA%BDdi%E1%BB%85nranh%C6%B0th%E1%BA%BFn%C3%A0o&amp;url=https://delta-platinum.mysapo.net/tinh-hinh-thi-truong-bat-dong-san-nam-2018-se-dien-ra-nhu-the-nao"
+																   class="share-twitter" title="Chia sẻ lên Twitter">
+																	<i class="fa fa-twitter"></i>
+																</a>
+																<a target="_blank"
+																   href="https://plus.google.com/share?url=https://delta-platinum.mysapo.net/tinh-hinh-thi-truong-bat-dong-san-nam-2018-se-dien-ra-nhu-the-nao"
+																   class="share-google" title="+1">
+																	<i class="fa fa-google"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="itemblog listblog">
+										<div class="blog_index">
+											<div class="myblog">
+												<div class="image-blog-left">
+
+													<a href="https://delta-platinum.mysapo.net/chu-dau-tu-tan-hoang-minh-group">
+														<img src="~/img/images2122354-condotel.jpg"
+															 data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/336/794/articles/images2122354-condotel.jpg?v=1540400783773"
+															 title="Chủ đầu tư Tân Hoàng Minh Group" alt="Chủ đầu tư Tân Hoàng Minh Group">
+													</a>
+
+												</div>
+												<div class="content_blog">
+													<h3 class="h3">
+														<a href="https://delta-platinum.mysapo.net/chu-dau-tu-tan-hoang-minh-group"
+														   title="Chủ đầu tư Tân Hoàng Minh Group">Chủ đầu tư Tân Hoàng Minh Group</a>
+													</h3>
+
+													<span class="time_post">
+														<i class="fa fa-calendar-check"></i>&nbsp;25/10/2018&nbsp;<span>
+															<i class="fa fa-bookmark"></i>&nbsp;0<span class="hidden-xs">
+																&nbsp; Bình
+																luận
+															</span>
+														</span>
+													</span>
+
+													<div class="post_author">
+														<div class="sharing_button listblogs">
+															<span><i class="fa fa-share-alt"></i></span>
+															<div class="social-media">
+
+
+																<a target="_blank"
+																   href="https://www.facebook.com/sharer.php?u=https://delta-platinum.mysapo.net/chu-dau-tu-tan-hoang-minh-group"
+																   class="share-facebook" title="Chia sẻ lên Facebook">
+																	<i class="fa fa-facebook"></i>
+																</a>
+																<a target="_blank"
+																   href="https://twitter.com/share?text=Ch%E1%BB%A7%C4%91%E1%BA%A7ut%C6%B0T%C3%A2nHo%C3%A0ngMinhGroup&amp;url=https://delta-platinum.mysapo.net/chu-dau-tu-tan-hoang-minh-group"
+																   class="share-twitter" title="Chia sẻ lên Twitter">
+																	<i class="fa fa-twitter"></i>
+																</a>
+																<a target="_blank"
+																   href="https://plus.google.com/share?url=https://delta-platinum.mysapo.net/chu-dau-tu-tan-hoang-minh-group"
+																   class="share-google" title="+1">
+																	<i class="fa fa-google"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="itemblog listblog">
+										<div class="blog_index">
+											<div class="myblog">
+												<div class="image-blog-left">
+
+													<a href="https://delta-platinum.mysapo.net/du-an-topaz-elite-duoc-gioi-dau-tu-ky-vong-tai-ho-chi-minh">
+														<img src="~/img/dnsg766-ra-mat-37-biet-thu-huong-nui-tai-khu-nghi-duong-sinh-thai-o-hoa-binh-tin-bds-2018.jpg"
+															 data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/336/794/articles/dnsg766-ra-mat-37-biet-thu-huong-nui-tai-khu-nghi-duong-sinh-thai-o-hoa-binh-tin-bds-2018.jpg?v=1540400554150"
+															 title="Dự án Topaz Elite được giới đầu tư kỳ vọng tại Hồ Chí Minh"
+															 alt="Dự án Topaz Elite được giới đầu tư kỳ vọng tại Hồ Chí Minh">
+													</a>
+
+												</div>
+												<div class="content_blog">
+													<h3 class="h3">
+														<a href="https://delta-platinum.mysapo.net/du-an-topaz-elite-duoc-gioi-dau-tu-ky-vong-tai-ho-chi-minh"
+														   title="Dự án Topaz Elite được giới đầu tư kỳ vọng tại Hồ Chí Minh">
+															Dự án Topaz Elite
+															được giới đầu tư kỳ vọng tại Hồ Chí Minh
+														</a>
+													</h3>
+
+													<span class="time_post">
+														<i class="fa fa-calendar-check"></i>&nbsp;25/10/2018&nbsp;<span>
+															<i class="fa fa-bookmark"></i>&nbsp;4<span class="hidden-xs">
+																&nbsp; Bình
+																luận
+															</span>
+														</span>
+													</span>
+
+													<div class="post_author">
+														<div class="sharing_button listblogs">
+															<span><i class="fa fa-share-alt"></i></span>
+															<div class="social-media">
+
+
+																<a target="_blank"
+																   href="https://www.facebook.com/sharer.php?u=https://delta-platinum.mysapo.net/du-an-topaz-elite-duoc-gioi-dau-tu-ky-vong-tai-ho-chi-minh"
+																   class="share-facebook" title="Chia sẻ lên Facebook">
+																	<i class="fa fa-facebook"></i>
+																</a>
+																<a target="_blank"
+																   href="https://twitter.com/share?text=D%E1%BB%B1%C3%A1nTopazElite%C4%91%C6%B0%E1%BB%A3cgi%E1%BB%9Bi%C4%91%E1%BA%A7ut%C6%B0k%E1%BB%B3v%E1%BB%8Dngt%E1%BA%A1iH%E1%BB%93Ch%C3%ADMinh&amp;url=https://delta-platinum.mysapo.net/du-an-topaz-elite-duoc-gioi-dau-tu-ky-vong-tai-ho-chi-minh"
+																   class="share-twitter" title="Chia sẻ lên Twitter">
+																	<i class="fa fa-twitter"></i>
+																</a>
+																<a target="_blank"
+																   href="https://plus.google.com/share?url=https://delta-platinum.mysapo.net/du-an-topaz-elite-duoc-gioi-dau-tu-ky-vong-tai-ho-chi-minh"
+																   class="share-google" title="+1">
+																	<i class="fa fa-google"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="itemblog listblog">
+										<div class="blog_index">
+											<div class="myblog">
+												<div class="image-blog-left">
+
+													<a href="https://delta-platinum.mysapo.net/du-an-pho-nha-thuong-mai-vinhomes-thanh-hoa">
+														<img src="~/img/emeralda-resort-ninh-binh.jpg"
+															 data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/336/794/articles/emeralda-resort-ninh-binh.jpg?v=1540400375363"
+															 title="Dự án phố nhà Thương Mại Vinhomes Thanh Hóa"
+															 alt="Dự án phố nhà Thương Mại Vinhomes Thanh Hóa">
+													</a>
+
+												</div>
+												<div class="content_blog">
+													<h3 class="h3">
+														<a href="https://delta-platinum.mysapo.net/du-an-pho-nha-thuong-mai-vinhomes-thanh-hoa"
+														   title="Dự án phố nhà Thương Mại Vinhomes Thanh Hóa">
+															Dự án phố nhà Thương Mại Vinhomes
+															Thanh Hóa
+														</a>
+													</h3>
+
+													<span class="time_post">
+														<i class="fa fa-calendar-check"></i>&nbsp;24/10/2018&nbsp;<span>
+															<i class="fa fa-bookmark"></i>&nbsp;0<span class="hidden-xs">
+																&nbsp; Bình
+																luận
+															</span>
+														</span>
+													</span>
+
+													<div class="post_author">
+														<div class="sharing_button listblogs">
+															<span><i class="fa fa-share-alt"></i></span>
+															<div class="social-media">
+
+
+																<a target="_blank"
+																   href="https://www.facebook.com/sharer.php?u=https://delta-platinum.mysapo.net/du-an-pho-nha-thuong-mai-vinhomes-thanh-hoa"
+																   class="share-facebook" title="Chia sẻ lên Facebook">
+																	<i class="fa fa-facebook"></i>
+																</a>
+																<a target="_blank"
+																   href="https://twitter.com/share?text=D%E1%BB%B1%C3%A1nph%E1%BB%91nh%C3%A0Th%C6%B0%C6%A1ngM%E1%BA%A1iVinhomesThanhH%C3%B3a&amp;url=https://delta-platinum.mysapo.net/du-an-pho-nha-thuong-mai-vinhomes-thanh-hoa"
+																   class="share-twitter" title="Chia sẻ lên Twitter">
+																	<i class="fa fa-twitter"></i>
+																</a>
+																<a target="_blank"
+																   href="https://plus.google.com/share?url=https://delta-platinum.mysapo.net/du-an-pho-nha-thuong-mai-vinhomes-thanh-hoa"
+																   class="share-google" title="+1">
+																	<i class="fa fa-google"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="itemblog listblog">
+										<div class="blog_index">
+											<div class="myblog">
+												<div class="image-blog-left">
+
+													<a href="https://delta-platinum.mysapo.net/cuoc-song-thuong-luu-tai-khu-biet-thu-paradise-cam-ranh">
+														<img src="~/img/five-star-eco-city-phoi-canh-quan.jpg"
+															 data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/336/794/articles/five-star-eco-city-phoi-canh-quan.jpg?v=1540400222727"
+															 title="Cuộc sống thượng lưu tại khu biệt thự Paradise Cam Ranh"
+															 alt="Cuộc sống thượng lưu tại khu biệt thự Paradise Cam Ranh">
+													</a>
+
+												</div>
+												<div class="content_blog">
+													<h3 class="h3">
+														<a href="https://delta-platinum.mysapo.net/cuoc-song-thuong-luu-tai-khu-biet-thu-paradise-cam-ranh"
+														   title="Cuộc sống thượng lưu tại khu biệt thự Paradise Cam Ranh">
+															Cuộc sống thượng lưu tại
+															khu biệt thự Paradise Cam Ranh
+														</a>
+													</h3>
+
+													<span class="time_post">
+														<i class="fa fa-calendar-check"></i>&nbsp;24/10/2018&nbsp;<span>
+															<i class="fa fa-bookmark"></i>&nbsp;0<span class="hidden-xs">
+																&nbsp; Bình
+																luận
+															</span>
+														</span>
+													</span>
+
+													<div class="post_author">
+														<div class="sharing_button listblogs">
+															<span><i class="fa fa-share-alt"></i></span>
+															<div class="social-media">
+
+
+																<a target="_blank"
+																   href="https://www.facebook.com/sharer.php?u=https://delta-platinum.mysapo.net/cuoc-song-thuong-luu-tai-khu-biet-thu-paradise-cam-ranh"
+																   class="share-facebook" title="Chia sẻ lên Facebook">
+																	<i class="fa fa-facebook"></i>
+																</a>
+																<a target="_blank"
+																   href="https://twitter.com/share?text=Cu%E1%BB%99cs%E1%BB%91ngth%C6%B0%E1%BB%A3ngl%C6%B0ut%E1%BA%A1ikhubi%E1%BB%87tth%E1%BB%B1ParadiseCamRanh&amp;url=https://delta-platinum.mysapo.net/cuoc-song-thuong-luu-tai-khu-biet-thu-paradise-cam-ranh"
+																   class="share-twitter" title="Chia sẻ lên Twitter">
+																	<i class="fa fa-twitter"></i>
+																</a>
+																<a target="_blank"
+																   href="https://plus.google.com/share?url=https://delta-platinum.mysapo.net/cuoc-song-thuong-luu-tai-khu-biet-thu-paradise-cam-ranh"
+																   class="share-google" title="+1">
+																	<i class="fa fa-google"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+
+<section class="awe-section-8">
+	<section class="section_subscribe">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="wrp">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<h2 class="h2">Đăng ký nhận tin</h2>
+								<p>Chúng tôi sẽ gửi bạn những thông tin bất động sản mới nhất</p>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form_inner">
+									<form class="a-center"
+										  action="https://gmail.us2.list-manage.com/subscribe/post?u=ef7f65e3be67e30ff1c4bd591&amp;id=a7430e9bc5"
+										  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+										<input type="email" value="" placeholder="Nhập địa chỉ email của bạn.." name="EMAIL" id="mail"
+											   aria-label="general.newsletter_form.newsletter_email">
+										<button class="button_subscribe button_45 subscribe" name="subscribe" id="subscribe">
+											Nhận tin miễn
+											phí
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>

@@ -1,0 +1,175 @@
+﻿@model RealEstate.Models.RealEstateViewModel.ProductAllView
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+
+<section class="search space_top">
+    <form class="search-head">
+        <div class="select_buy_sell select-search-item">
+            <div>
+                <input type="radio" name="buyRentSearch" id="buy-search" checked>
+                <label for="buy-search">Bán</label>
+                <input type="radio" name="buyRentSearch" id="rent-search">
+                <label for="rent-search">Cho thuê</label>
+            </div>
+        </div>
+        <div class="select-serch-inpu">
+            <span><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="search" placeholder="Nguyen Thi Minh Khai....">
+        </div>
+        <div class="select-search-item">
+            <span>Khu vực <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <select name="" id="">
+                <option value="" selected>Tất cả</option>
+                <option value="">Hà Nội</option>
+                <option value="">TP.HCM</option>
+            </select>
+        </div>
+        <div class="select-search-item">
+            <span>Mức giá <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <select name="" id="">
+                <option value="" selected>Tất cả</option>
+                <option value="">Dưới 500tr</option>
+                <option value="">500tr - 1 tỷ</option>
+            </select>
+        </div>
+        <div class="select-search-item">
+            <span>Diện tích <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <select name="" id="">
+                <option value="" selected>Tất cả</option>
+                <option value="">Dưới 25m2</option>
+                <option value="">25m2 - 35m2</option>
+            </select>
+        </div>
+        <div class="select-search-item">
+            <span>Số phòng ngủ <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <select name="" id="">
+                <option value="" selected>Tất cả</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+            </select>
+        </div>
+    </form>
+    <div class="search-main">
+        <div class="search-main-left">
+                @foreach(var item in Model.Products)
+			    {
+                    var imgURL = item.ProductImages.ToList();
+                    var user = item.TransactionExcepts.Select(m => m.User).FirstOrDefault();
+                    var time = item.TransactionExcepts.FirstOrDefault();
+
+                    <div class="item-seach">
+
+                        <div class="item-seach-img">
+                        <img src="~/img/@imgURL[0].NameImage" alt="">
+                            <div class="item-seach-img-side">
+                                <img src="~/img/@imgURL[1].NameImage" alt="">
+                                <div>
+                                    <img src="~/img/@imgURL[2].NameImage" alt="">
+                                    <img src="~/img/@imgURL[3].NameImage" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-seach-content">
+                            <h4>@item.NameProduct</h4>
+                            <div>
+                            <span class="focus-span">
+                                @(item.Directory == '1'
+                                    ? Html.Raw("Cho Thuê: " + String.Format("{0:0,00}", item.Price) + "₫/Tháng")
+                                    : Html.Raw("Giá Bán: " + String.Format("{0:0,00}", item.Price) + "₫")
+                                    )
+                            </span> -
+                                <span class="focus-span">@item.Area m2</span> -
+                            <span>@item.AddressProduct</span>
+                            </div>
+                            <p>
+                            @item.Description
+                            </p>
+                        </div>
+                        <div class="item-search-foot">
+                            <div class="item-search-foot-l">
+                            <img src="~/img/@(user.Image == null ? "Avatar-Default.jpg" : user.Image)" alt="">
+                                <div>
+                                    <p>@user.FullName</p>
+                                <span>@time.Time.ToString("dd-MM-yyyy hh:mm tt")</span>
+                                </div>
+                            </div>
+                            <div class="item-search-foot-btn">
+                                <button><span><i class="fa fa-phone" aria-hidden="true"></i></span>@user.Phone</button>
+                                <button><i class="fa fa-heart" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                }
+        </div>
+        <div class="search-main-right">
+            <div class="search-main-right-item">
+                <h3>Lọc theo khoảng giá</h3>
+                <h4>Thỏa thuận</h4>
+                <h4>Dưới 500 triệu</h4>
+                <h4>500 - 800 triệu</h4>
+                <h4>800 triệu - 1 tỷ</h4>
+                <h4>1 - 2 tỷ</h4>
+                <h4>2 - 3 tỷ</h4>
+                <h4>3 - 5 tỷ</h4>
+                <h4>5 - 7 tỷ</h4>
+                <h4>7 - 10 tỷ</h4>
+                <h4>10 - 20 tỷ</h4>
+                <h4>20 - 30 tỷ</h4>
+                <h4>30 - 40 tỷ</h4>
+                <h4>40 - 60 tỷ</h4>
+                <h4>Trên 60 tỷ</h4>
+            </div>
+            <div class="search-main-right-item">
+                <h3>Lọc theo diện tích</h3>
+                <h4>Dưới 30 m²</h4>
+                <h4>30 - 50 m²</h4>
+                <h4>50 - 80 m²</h4>
+                <h4>80 - 100 m²</h4>
+                <h4>100 - 150 m²</h4>
+                <h4>150 - 200 m²</h4>
+                <h4>200 - 250 m²</h4>
+                <h4>250 - 300 m²</h4>
+                <h4>300 - 500 m²</h4>
+                <h4>Trên 500 m²</h4>
+            </div>
+            <div class="search-main-right-item  gray-b">
+                <h3>Mua bán nhà đất</h3>
+                <h4>Hồ Chí Minh (53576)</h4>
+                <h4>Hà Nội (51955)</h4>
+                <h4>Bình Dương (6008)</h4>
+                <h4>Đà Nẵng (5095)</h4>
+                <h4>Khánh Hòa (4872)</h4>
+                <h4>Đồng Nai (3775)</h4>
+                <h4>Long An (2583)</h4>
+                <h4>Lâm Đồng (2291)</h4>
+                <h4>Hải Phòng (2233)</h4>
+                <h4>Bà Rịa Vũng Tàu (2063)</h4>
+            </div>
+            <div class="search-main-right-item gray-b">
+                <h3>Hỗ trợ tiện ích</h3>
+                <h4>Tư vấn phong thủy</h4>
+                <h4>Dự tính chi phí làm nhà</h4>
+                <h4>Tính lãi suất</h4>
+                <h4>Quy trình xây nhà</h4>
+                <h4>Xem tuổi làm nhà</h4>
+            </div>
+        </div>
+    </div>
+    <div class="search-pagination">
+        <div class="search-pagination-container">
+            <a href=""><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+            <a href="" class="chose">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+            <a href="">6</a>
+            <a href="">7</a>
+            <a href=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>

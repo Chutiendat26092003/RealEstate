@@ -1,0 +1,348 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model RealEstate.Models.RealEstateViewModel.ProductDetailView
+
+@{
+    ViewData["Title"] = "Manager Product";
+    User user = ViewBag.user;
+    var status = 1;
+
+}
+
+@*<script src="~/ckeditor5-build-classic/ckeditor.js"></script>*@
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/super-build/ckeditor.js"></script>
+
+<section class="post-section space_top">
+    @await Html.PartialAsync("_MenuPartialView", user,  new ViewDataDictionary(ViewData) { { "status", status } })
+    <div class="post-content">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="post-content-item">
+                <h3>Thông tin cơ bản</h3>
+                <div class="post-content-swich">
+                    <input id="sell" type="radio" asp-for="@Model.Product.Directory" value="0" checked>
+                    <label for="sell">Bán</label>
+                    <input id="pent" type="radio" asp-for="@Model.Product.Directory" value="1">
+                    <label for="pent">Cho thuê</label>
+                </div>
+                <div class="form-group">
+                    <h3 class="post-con-titlte">Danh mục:</h3>
+                    @Html.DropDownListFor(m => m.Product.CategoryId, ViewBag.Categories as SelectList, "-- Hãy chọn một danh mục ---", new { @class = "form-control" })
+                    <span asp-validation-for="@Model.Product.CategoryId" class="text-danger"></span>
+                </div>
+                <div class="post-con-row">
+                    <div class="post-content-select">
+                        <h3 class="post-con-titlte">Địa chỉ</h3>
+                        <input type="text" asp-for="@Model.Product.AddressProduct" placeholder="VD: Hà Nội">
+                        <span asp-validation-for="@Model.Product.AddressProduct" class="text-danger"></span>
+                    </div>
+                    <div class="post-content-input">
+                        <h3 class="post-con-titlte">Giá: (đ)</h3>
+                        <input type="text" asp-for="@Model.Product.Price" placeholder="VD: 2000000">
+                        <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="post-con-row">
+                    <div class="post-content-input">
+                        <h3 class="post-con-titlte">Diện tích: (m2)</h3>
+                        <input type="text" asp-for="@Model.Product.Area" placeholder="VD: 500">
+                        <span asp-validation-for="@Model.Product.Area" class="text-danger"></span>
+
+                    </div>
+                    <div class="post-content-input">
+                        <h3 class="post-con-titlte">Hướng nhà</h3>
+                        <input type="text" asp-for="@Model.Product.HomeOrientation" placeholder="VD: Đông bắc">
+                        <span asp-validation-for="@Model.Product.HomeOrientation" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="post-con-row">
+                    <div class="post-content-input">
+                        <h3 class="post-con-titlte">Số phòng ngủ</h3>
+                        <input type="text" asp-for="@Model.Product.Bedroom" placeholder="VD: 3">
+                        <span asp-validation-for="@Model.Product.Bedroom" class="text-danger"></span>
+                    </div>
+                    <div class="post-content-input">
+                        <h3 class="post-con-titlte">Số phòng WC</h3>
+                        <input type="text" asp-for="@Model.Product.Restrooms" placeholder="VD: 2">
+                        <span asp-validation-for="@Model.Product.Restrooms" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="post-content-item">
+                <h3>Thông tin bài viết</h3>
+                <div class="post-content-area">
+                    <h3 class="post-con-titlte">Tiêu đề</h3>
+                    <textarea id="NameProduct" rows="2" asp-for="@Model.Product.NameProduct" placeholder="VD: Bán nhà riêng 50m2 chính chủ tại Cầu Giấy"
+                              style="height:64px;"></textarea>
+                    <span asp-validation-for="@Model.Product.NameProduct" class="text-danger"></span>
+
+                </div>
+                <div class="post-content-area">
+                    <h3 class="post-con-titlte">
+                        Mô tả
+                        @*@Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label" })*@
+                    </h3>
+                    @Html.TextAreaFor(model => model.Product.Description,new { @id = "FullDescription", @class = "form-control", @rows = "200" }) @Html.ValidationMessageFor(model => model.Product.Description, "", new { @class = "text-danger" })
+                    @*<script>
+                        //CKEDITOR.replace("FullDescription");
+                        ClassicEditor
+                            .create(document.querySelector('#FullDescription'))
+                            .catch(error => {
+                                console.error(error);
+                            });
+                    </script>*@
+                    <script>
+                        // This sample still does not showcase all CKEditor 5 features (!)
+                        // Visit https://ckeditor.com/docs/ckeditor5/latest/features/index.html to browse all the features.
+                        CKEDITOR.ClassicEditor.create(document.getElementById("FullDescription"), {
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+                            toolbar: {
+                                items: [
+                                    'exportPDF','exportWord', '|',
+                                    'findAndReplace', 'selectAll', '|',
+                                    'heading', '|',
+                                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                                    'bulletedList', 'numberedList', 'todoList', '|',
+                                    'outdent', 'indent', '|',
+                                    'undo', 'redo',
+                                    '-',
+                                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                                    'alignment', '|',
+                                    'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                                    'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                                    'textPartLanguage', '|',
+                                    'sourceEditing'
+                                ],
+                                shouldNotGroupWhenFull: true
+                            },
+                            // Changing the language of the interface requires loading the language file using the <script> tag.
+                            // language: 'es',
+                            list: {
+                                properties: {
+                                    styles: true,
+                                    startIndex: true,
+                                    reversed: true
+                                }
+                            },
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/headings.html#configuration
+                            heading: {
+                                options: [
+                                    { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                                    { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                                    { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                                    { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                                    { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                                    { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+                                ]
+                            },
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/editor-placeholder.html#using-the-editor-configuration
+                            placeholder: 'Nhập mô tả bài đăng!',
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-family-feature
+                            fontFamily: {
+                                options: [
+                                    'default',
+                                    'Arial, Helvetica, sans-serif',
+                                    'Courier New, Courier, monospace',
+                                    'Georgia, serif',
+                                    'Lucida Sans Unicode, Lucida Grande, sans-serif',
+                                    'Tahoma, Geneva, sans-serif',
+                                    'Times New Roman, Times, serif',
+                                    'Trebuchet MS, Helvetica, sans-serif',
+                                    'Verdana, Geneva, sans-serif'
+                                ],
+                                supportAllValues: true
+                            },
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-size-feature
+                            fontSize: {
+                                options: [ 10, 12, 14, 'default', 18, 20, 22 ],
+                                supportAllValues: true
+                            },
+                            // Be careful with the setting below. It instructs CKEditor to accept ALL HTML markup.
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html#enabling-all-html-features
+                            htmlSupport: {
+                                allow: [
+                                    {
+                                        name: /.*/,
+                                        attributes: true,
+                                        classes: true,
+                                        styles: true
+                                    }
+                                ]
+                            },
+                            // Be careful with enabling previews
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/html-embed.html#content-previews
+                            htmlEmbed: {
+                                showPreviews: true
+                            },
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/link.html#custom-link-attributes-decorators
+                            link: {
+                                decorators: {
+                                    addTargetToExternalLinks: true,
+                                    defaultProtocol: 'https://',
+                                    toggleDownloadable: {
+                                        mode: 'manual',
+                                        label: 'Downloadable',
+                                        attributes: {
+                                            download: 'file'
+                                        }
+                                    }
+                                }
+                            },
+                            // https://ckeditor.com/docs/ckeditor5/latest/features/mentions.html#configuration
+                            mention: {
+                                feeds: [
+                                    {
+                                        marker: '@@',
+                                        feed: [
+                                            '@@apple', '@@bears', '@@brownie', '@@cake', '@@cake', '@@candy', '@@canes', '@@chocolate', '@@cookie', '@@cotton', '@@cream',
+                                            '@@cupcake', '@@danish', '@@donut', '@@dragée', '@@fruitcake', '@@gingerbread', '@@gummi', '@@ice', '@@jelly-o',
+                                            '@@liquorice', '@@macaroon', '@@marzipan', '@@oat', '@@pie', '@@plum', '@@pudding', '@@sesame', '@@snaps', '@@soufflé',
+                                            '@@sugar', '@@sweet', '@@topping', '@@wafer'
+                                        ],
+                                        minimumCharacters: 1
+                                    }
+                                ]
+                            },
+                            // The "super-build" contains more premium features that require additional configuration, disable them below.
+                            // Do not turn them on unless you read the documentation and know how to configure them and setup the editor.
+                            removePlugins: [
+                                // These two are commercial, but you can try them out without registering to a trial.
+                                // 'ExportPdf',
+                                // 'ExportWord',
+                                'CKBox',
+                                'CKFinder',
+                                'EasyImage',
+                                // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
+                                // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html
+                                // Storing images as Base64 is usually a very bad idea.
+                                // Replace it on production website with other solutions:
+                                // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
+                                // 'Base64UploadAdapter',
+                                'RealTimeCollaborativeComments',
+                                'RealTimeCollaborativeTrackChanges',
+                                'RealTimeCollaborativeRevisionHistory',
+                                'PresenceList',
+                                'Comments',
+                                'TrackChanges',
+                                'TrackChangesData',
+                                'RevisionHistory',
+                                'Pagination',
+                                'WProofreader',
+                                // Careful, with the Mathtype plugin CKEditor will not load when loading this sample
+                                // from a local file system (file://) - load this site via HTTP server if you enable MathType
+                                'MathType'
+                            ]
+                        });
+                    </script>
+                    @*<textarea id="descContent" style="height: 160px;" asp-for="@Model.Product.Description"
+                              placeholder="Nhập mô tả chung về bất động sản của bạn. Ví dụ: Khu nhà có vị trí thuận lợi, gần công viên, gần trường học ... "
+                              type="text"></textarea>
+                    <span asp-validation-for="@Model.Product.Description" class="text-danger"></span>*@
+
+                </div>
+            </div>
+            <div class="post-content-item">
+                <h3>Hình ảnh</h3>
+                <div class="btn-upload_img">
+                    <label for="listImgUp">
+                        <span><i class="fa fa-upload" aria-hidden="true"></i></span>
+                        <h4>Bấm vào đây để chọn ảnh tải lên</h4>
+                    </label>
+                    <input type="file" asp-for="@Model.files" id="listImgUp" multiple>
+                </div>
+                <div id="box-img-up"></div>
+            </div>
+            <div class="post-content-item">
+                <h3>Cấu hình đăng</h3>
+                <h3 class="post-con-titlte">Chọn loại tin đăng</h3>
+                <div class="post-type-box">
+                    <input type="radio" id="typePost1" asp-for="@Model.TransactionExcept.ServicePackage" value="thuong" checked>
+                    <label class="post-type-item" for="typePost1">
+                        <h4>Tin thường</h4>
+                        <span>2.182đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-1.svg" alt="">
+                            <p>Đứng cuối kết quả tìm kiếm</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-1.png" alt="">
+                            <p>Tin đăng cỡ nhỏ</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                    <input type="radio" id="typePost2" asp-for="@Model.TransactionExcept.ServicePackage" value="bac">
+                    <label class="post-type-item" for="typePost2">
+                        <h4 style="color: #009BA1;">VIP Bạc</h4>
+                        <span>49.090đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-2.svg" alt="">
+                            <p>Hiển thị dưới vip vàng</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-2.png" alt="">
+                            <p>Tin đăng cỡ trung bình</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                    <input type="radio"  id="typePost3" asp-for="@Model.TransactionExcept.ServicePackage" value="vang" >
+                    <label class="post-type-item" for="typePost3">
+                        <h4 style="color: #E9B149;">VIP Vàng</h4>
+                        <span>104.545đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-3.svg" alt="">
+                            <p>Hiển thị dưới vip kim cương</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-3.png" alt="">
+                            <p>Tin đăng cỡ lớn</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                    <input type="radio" id="typePost4" asp-for="@Model.TransactionExcept.ServicePackage" value="kimCuong">
+                    <label class="post-type-item" for="typePost4">
+                        <h4 style="color: #E04537;">VIP Kim Cương</h4>
+                        <span>268.184đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-4.svg" alt="">
+                            <p>Hiển thị đầu kết quả tìm kiếm</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-4.png" alt="">
+                            <p>Tin đăng cỡ siêu lớn</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                </div>
+                <h3 class="post-con-titlte">Số ngày</h3>
+                <div class="post-day-box">
+                    <input type="radio" id="postDay1" checked asp-for="@Model.TransactionExcept.Day" value="10">
+                    <label for="postDay1">
+                        10 ngày
+                    </label>
+                    <input type="radio"  id="postDay2" asp-for="@Model.TransactionExcept.Day" value="15">
+                    <label for="postDay2">
+                        15 ngày
+                    </label>
+                    <input type="radio"  id="postDay3" asp-for="@Model.TransactionExcept.Day" value="30">
+                    <label for="postDay3">
+                        30 ngày
+                    </label>
+                </div>
+            </div>
+            <div class="post-content-item post-total-payment">
+            </div>
+            <input id="post-total-back" type="number" asp-for="@Model.TotalTran">
+        </form>
+    </div>
+</section>
+

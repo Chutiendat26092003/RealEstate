@@ -1,0 +1,50 @@
+@model RealEstate.Models.RealEstateViewModel.RegisterView
+    @{
+    ViewData["Title"] = "Register";
+    }
+
+    <!-- Main -->
+    <section class="login-regis" style="padding-top: 105px;">
+        <div class="container-login">
+            <h2>Đăng ký</h2>
+            <form method="post" asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-login-group">
+                    <label >Tên đầy đủ</label>
+                    <input type="text" asp-for="FullName" placeholder="Họ và Tên">
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-login-group">
+                    <label>Email</label>
+                    <input type="email" asp-for="Email" placeholder="Địa chỉ Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-login-group">
+                    <label>Số điện thoại</label>
+                    <input type="tel" asp-for="Phone" placeholder="Số điện thoại">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-login-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" asp-for="Password" placeholder="Mật khẩu">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-login-group">
+                    <label>Nhập lại mật khẩu</label>
+                    <input type="password" asp-for="ConfirmPassword" placeholder="Nhập lại mật khẩu">
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-login-submit">
+                    <button type="submit" class="">Xác nhận</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- End Main -->
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}*@

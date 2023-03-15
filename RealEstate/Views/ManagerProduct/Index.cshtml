@@ -1,0 +1,169 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model RealEstate.Models.RealEstateViewModel.ProductAllView
+
+@{
+    ViewData["Title"] = "Manager Product";
+    User user = Model.User;
+    var status = 0;
+
+    var startIndex = (Model.PagedProducts.PageNumber - 1) * Model.PagedProducts.PageSize;
+    var count = startIndex + 1;
+
+    var totalPage = ViewBag.totalPage;
+    //var totalPage = Model.PagedProducts.TotalItemCount;
+
+}
+
+
+<section class="post-section space_top">
+    @await Html.PartialAsync("_MenuPartialView", user, new ViewDataDictionary(ViewData) { { "status", status } })
+    <div class="post-content list-post-container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 class="list-post-titlte">Danh sách tin đăng</h3>
+            <a class="btn btn-success" asp-controller="ManagerProduct" asp-action="Create"><span style="font-size: 17px;">Đăng bài</span></a>
+        </div>
+        <div class="list-post-box">
+            <div class="list-post-box-head">
+                <div class="list-post-head-title" style="width: 8%;">
+                    STT
+                </div>
+                <div class="list-post-head-title" style="width: 60%;">
+                    Tiêu đề
+                </div>
+                <div class="list-post-head-title" style="width: 14%;">
+                    Ngày đăng
+                </div>
+                <div class="list-post-head-title" style="width: 18%;">
+                    Action
+                </div>
+            </div>
+            <div class="list-post-box-body">
+                @foreach (var item in Model.PagedProducts)
+                {
+                   
+                    @if (!(item.IsDeleted)) 
+                    {
+                        var imgURL = item.ProductImages.FirstOrDefault().NameImage;
+                        var transactionExcept = user.TransactionExcepts.Where(a => a.ProductId == item.Id).Where(a => a.EndTime == false).FirstOrDefault();
+                        if (transactionExcept == null)
+                        {
+                            transactionExcept = user.TransactionExcepts.Where(a => a.ProductId == item.Id).Where(a => a.EndTime == true).LastOrDefault();
+                        }
+                        <div class="list-post-box-body-item">
+                            <div class="list-post-stt" style="width: 8%;">@count </div>
+                            <div class="list-post-ti" style="width: 60%;">
+                                <img src="~/img/@imgURL" alt="">
+                                <p>
+                                    @item.NameProduct
+                                </p>
+                            </div>
+                            <div class="list-post-date" style="width: 14%;">
+                                <div>@transactionExcept.Time.ToString("dd-MM-yyyy hh:mm tt")</div>
+                                @switch (transactionExcept.ServicePackage)
+                                {
+                                    case "thuong":
+                                        <div>Tin thường</div>
+                                        break;
+                                    case "bac":
+                                        <div>VIP Bạc</div>
+                                        break;
+                                    case "vang":
+                                        <div>VIP Vàng</div>
+                                        break;
+                                    case "kimCuong":
+                                        <div>VIP Kim Cương</div>
+                                        break;
+                                    default:
+                                        <div>Tin thường</div>
+                                        break;
+                                }
+                                <div>@transactionExcept.Day Ngày</div>
+                            </div>
+                            @if (transactionExcept.EndTime)
+                            {
+                                <div class="list-post-action" style="width: 18%;">
+                                    <a asp-controller="ManagerProduct" asp-action="Renewal" asp-route-id="@item.Id" class="chose">Tiếp Tục Gia Hạn</a>
+                                    <a asp-controller="ManagerProduct" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="list-post-action" style="width: 18%;">
+                                    <a asp-controller="ManagerProduct" asp-action="Renewal" asp-route-id="@item.Id">Gia Hạn</a>
+                                    <a asp-controller="ManagerProduct" asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+                                    <a asp-controller="ManagerProduct" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                                </div>
+                            }
+                        </div>
+
+                        count++;
+                    }
+                }
+
+                @*<div class="pagination">
+                    <span>Page @Model.PagedProducts.PageNumber</span>
+                    @{
+
+                        if (Model.PagedProducts.HasPreviousPage)
+                        {
+                            <a asp-action="Index" asp-route-page="@(Model.PagedProducts.PageNumber - 1)">Previous</a>
+                        }
+                        for (int i = 1; i <= totalPage; i++)
+                        {
+                            if (i == Model.PagedProducts.PageNumber)
+                            {
+                                <span>@i</span>
+                            }
+                            else
+                            {
+                                <a asp-action="Index" asp-route-page="@i">@i</a>
+                            }
+                        }
+                        if (Model.PagedProducts.HasNextPage)
+                        {
+                            <a asp-action="Index" asp-route-page="@(Model.PagedProducts.PageNumber + 1)">Next</a>
+                        }
+                    }
+                </div>*@
+                <div class="search-pagination" style=" margin: unset; padding: 40px;">
+                    <div class="search-pagination-container">
+                        @{
+
+                            if (Model.PagedProducts.HasPreviousPage)
+                            {
+                                <a asp-action="Index" asp-route-page="@(Model.PagedProducts.PageNumber - 1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                            } 
+                            else
+                            {
+                                <a ><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                            } 
+
+                            for (int i = 1; i <= totalPage; i++)
+                            {
+                                if (i == Model.PagedProducts.PageNumber)
+                                {
+
+                                    <a class="chose">@i</a>
+                                }
+                                else
+                                {
+                                    <a asp-action="Index" asp-route-page="@i">@i</a>
+                                }
+                            }
+
+                            if (Model.PagedProducts.HasNextPage)
+                            {
+                                <a asp-action="Index" asp-route-page="@(Model.PagedProducts.PageNumber + 1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            }
+                            else
+                            {
+                                <a><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            } 
+                        }
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>

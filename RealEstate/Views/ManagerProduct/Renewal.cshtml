@@ -1,0 +1,149 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model RealEstate.Models.RealEstateViewModel.ProductDetailView
+
+@{
+    ViewData["Title"] = "Manager Product";
+    User user = ViewBag.user;
+    var status = 1;
+
+}
+
+@*<script src="~/ckeditor5-build-classic/ckeditor.js"></script>*@
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/super-build/ckeditor.js"></script>
+
+<section class="post-section space_top">
+    @await Html.PartialAsync("_MenuPartialView", user,  new ViewDataDictionary(ViewData) { { "status", status } })
+    <div class="post-content">
+        <form asp-action="Renewal" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="number" asp-for="@Model.Product.Id" value="@Model.Product.Id" hidden>
+            <div class="post-content-item">
+                <h3>Tên Bài Viết</h3>
+                <div class="post-content-area">
+                    <h4>@Model.Product.NameProduct</h1>
+                </div>
+            </div>
+            <div class="post-content-item">
+                <h3>Lần Gia Hạn Gần Nhất</h3>
+                <div class="post-con-row">
+                    <div class="post-content-select">
+                        <h3 class="post-con-titlte">Thời Gian: @Model.TransactionExcept.Time</h3>
+                    </div>
+                    <div class="post-content-input">
+                        @switch (Model.TransactionExcept.ServicePackage)
+                        {
+                            case "thuong":
+                                <h3 class="post-con-titlte">Gói Dịch Vụ: Tin thường</h3>
+                                break;
+                            case "bac":
+                                <h3 class="post-con-titlte">Gói Dịch Vụ: VIP Bạc</h3>
+                                break;
+                            case "vang":
+                                <h3 class="post-con-titlte">Gói Dịch Vụ: VIP Vàng</h3>
+                                break;
+                            case "kimCuong":
+                                <h3 class="post-con-titlte">Gói Dịch Vụ: VIP Kim Cương</h3>
+                                break;
+                            default:
+                                <h3 class="post-con-titlte">Gói Dịch Vụ: Tin thường</h3>
+                                break;
+                        }
+                    </div>
+                    <div class="post-content-input">
+                        <h3 class="post-con-titlte">Gói Ngày: @Model.TransactionExcept.Day ngày</h3>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="post-content-item">
+                <h3>Cấu hình gia hạn</h3>
+                <h3 class="post-con-titlte">Chọn loại gia hạn</h3>
+                <div class="post-type-box">
+                    <input type="radio" id="typePost1" asp-for="@Model.TransactionExcept.ServicePackage" value="thuong" checked>
+                    <label class="post-type-item" for="typePost1">
+                        <h4>Tin thường</h4>
+                        <span>2.182đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-1.svg" alt="">
+                            <p>Đứng cuối kết quả tìm kiếm</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-1.png" alt="">
+                            <p>Tin đăng cỡ nhỏ</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                    <input type="radio" id="typePost2" asp-for="@Model.TransactionExcept.ServicePackage" value="bac">
+                    <label class="post-type-item" for="typePost2">
+                        <h4 style="color: #009BA1;">VIP Bạc</h4>
+                        <span>49.090đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-2.svg" alt="">
+                            <p>Hiển thị dưới vip vàng</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-2.png" alt="">
+                            <p>Tin đăng cỡ trung bình</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                    <input type="radio" id="typePost3" asp-for="@Model.TransactionExcept.ServicePackage" value="vang">
+                    <label class="post-type-item" for="typePost3">
+                        <h4 style="color: #E9B149;">VIP Vàng</h4>
+                        <span>104.545đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-3.svg" alt="">
+                            <p>Hiển thị dưới vip kim cương</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-3.png" alt="">
+                            <p>Tin đăng cỡ lớn</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                    <input type="radio" id="typePost4" asp-for="@Model.TransactionExcept.ServicePackage" value="kimCuong">
+                    <label class="post-type-item" for="typePost4">
+                        <h4 style="color: #E04537;">VIP Kim Cương</h4>
+                        <span>268.184đ/ngày</span>
+                        <div class="post-type-item-con">
+                            <img src="~/img/svg/type-4.svg" alt="">
+                            <p>Hiển thị đầu kết quả tìm kiếm</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <img src="~/img/type-4.png" alt="">
+                            <p>Tin đăng cỡ siêu lớn</p>
+                        </div>
+                        <div class="post-type-item-con">
+                            <button type="button">Chọn</button>
+                        </div>
+                    </label>
+                </div>
+                <h3 class="post-con-titlte">Số ngày</h3>
+                <div class="post-day-box">
+                    <input type="radio" id="postDay1" checked asp-for="@Model.TransactionExcept.Day" value="10">
+                    <label for="postDay1">
+                        10 ngày
+                    </label>
+                    <input type="radio" id="postDay2" asp-for="@Model.TransactionExcept.Day" value="15">
+                    <label for="postDay2">
+                        15 ngày
+                    </label>
+                    <input type="radio" id="postDay3" asp-for="@Model.TransactionExcept.Day" value="30">
+                    <label for="postDay3">
+                        30 ngày
+                    </label>
+                </div>
+            </div>
+            <div class="post-content-item post-total-payment">
+            </div>
+            <input id="post-total-back" type="number" asp-for="@Model.TotalTran">
+        </form>
+    </div>
+</section>
+
